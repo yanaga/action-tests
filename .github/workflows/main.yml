@@ -6,6 +6,12 @@ on:
       - master
 
 jobs:
+  checkout:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout project
+      - uses: actions/checkout@v2
+    
   build:
     runs-on: ubuntu-18.04
     container: antora/antora:2.2.0
