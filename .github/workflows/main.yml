@@ -16,7 +16,7 @@ jobs:
       with:
         args: github-pages.yml 
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@releases/v3.2.4
+      uses: JamesIves/github-pages-deploy-action@releases/3.2.4
       with:
         GITHUB_TOKEN: "${{github.token}}"
         FOLDER: gh-pages
