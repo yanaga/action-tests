@@ -16,12 +16,13 @@ jobs:
     runs-on: ubuntu-18.04
     container: antora/antora:2.2.0
     steps:
-    - name: List files
-      run: ls -lR $GITHUB_WORKSPACE
-    - name: List root
-      run: git version
-    - name: env
-      run: env
+    - name: Checkout project
+      uses: actions/checkout@v2
+    - name: Run antora
+      uses: docker://antora/antora:2.2.0
+      with:
+        entrypoint: /bin/sh
+        args: antora github-pages.yml 
     - name: Run a one-line script
       run: antora $GITHUB_WORKSPACE/github-pages.yml
     
