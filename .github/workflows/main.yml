@@ -19,7 +19,7 @@ jobs:
     - name: List files
       run: ls -lR $GITHUB_WORKSPACE
     - name: List root
-      run: ls -lR /
+      run: git version
     - name: env
       run: env
     - name: Run a one-line script
