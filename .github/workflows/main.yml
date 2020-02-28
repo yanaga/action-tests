@@ -14,7 +14,6 @@ jobs:
     
   build:
     runs-on: ubuntu-18.04
-    container: antora/antora:2.2.0
     steps:
     - name: Checkout project
       uses: actions/checkout@v2
@@ -22,6 +21,7 @@ jobs:
       uses: docker://antora/antora:2.2.0
       with:
         entrypoint: /bin/sh
+        volumes: asd
         args: antora github-pages.yml 
     - name: Run a one-line script
       run: antora $GITHUB_WORKSPACE/github-pages.yml
