@@ -9,14 +9,13 @@ jobs:
   checkout:
     runs-on: ubuntu-18.04
     steps:
-      - name: Checkout project
-      - uses: actions/checkout@v2
+    - name: Checkout project
+      uses: actions/checkout@v2
     
   build:
     runs-on: ubuntu-18.04
     container: antora/antora:2.2.0
     steps:
-    - uses: actions/checkout@v2
     - name: Run a one-line script
       run: antora github-pages.yml
     
