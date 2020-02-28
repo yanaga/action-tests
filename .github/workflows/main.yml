@@ -22,5 +22,5 @@ jobs:
       with:
         args: github-pages.yml 
     - name: Run a one-line script
-      run: antora $GITHUB_WORKSPACE/github-pages.yml
+      run: ls -lR .
     
