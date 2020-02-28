@@ -17,7 +17,7 @@ jobs:
     container: antora/antora:2.2.0
     steps:
     - name: List files
-      run: ls -lR .
+      run: ls -lR $GITHUB_WORKSPACE
     - name: List root
       run: ls -lR /
     - name: env
