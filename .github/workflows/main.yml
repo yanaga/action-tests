@@ -16,8 +16,9 @@ jobs:
     runs-on: ubuntu-18.04
     container: antora/antora:2.2.0
     steps:
+    - name: List files
+      run: ls -lR *
+
     - name: Run a one-line script
       run: antora $GITHUB_WORKSPACE/github-pages.yml
     
-    - name: List files
-      run: ls -lR gh-pages
