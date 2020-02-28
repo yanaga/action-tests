@@ -20,9 +20,7 @@ jobs:
     - name: Run antora
       uses: docker://antora/antora:2.2.0
       with:
-        entrypoint: /bin/sh
-        volumes: asd
-        args: antora github-pages.yml 
+        args: github-pages.yml 
     - name: Run a one-line script
       run: antora $GITHUB_WORKSPACE/github-pages.yml
     
