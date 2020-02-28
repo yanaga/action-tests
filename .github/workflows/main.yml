@@ -6,13 +6,7 @@ on:
       - master
 
 jobs:
-  checkout:
-    runs-on: ubuntu-18.04
-    steps:
-    - name: Checkout project
-      uses: actions/checkout@v2
-    
-  build:
+  build-and-publish:
     runs-on: ubuntu-18.04
     steps:
     - name: Checkout project
@@ -21,6 +15,10 @@ jobs:
       uses: docker://antora/antora:2.2.0
       with:
         args: github-pages.yml 
-    - name: Run a one-line script
-      run: ls -lR .
-    
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@releases/v3.2.4
+      with:
+        GITHUB_TOKEN: "${{github.token}}"
+        FOLDER: gh-pages
+        BRANCH: gh-pages
+        COMMIT_MESSAGE: "Publishing the docs for commit ${{github.sha}}"
