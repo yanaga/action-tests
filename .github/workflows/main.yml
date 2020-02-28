@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    container: antora/antora:2.2.0
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: antora github-pages.yml
