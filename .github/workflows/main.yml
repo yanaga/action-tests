@@ -17,8 +17,11 @@ jobs:
     container: antora/antora:2.2.0
     steps:
     - name: List files
-      run: ls -lR *
-
+      run: ls -lR .
+    - name: List root
+      run: ls -lR /
+    - name: env
+      run: env
     - name: Run a one-line script
       run: antora $GITHUB_WORKSPACE/github-pages.yml
     
